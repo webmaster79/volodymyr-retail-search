@@ -31,6 +31,11 @@ To get a local copy up and running, follow these simple example steps.
 - NPM
 - Yarn
 
+### Install Database
+- You should have postgres installed on your local machine.
+- Sync Database with Prisma Model `yarn prisma:push`.
+- Generate the client from the Prisma schema file `yarn prisma:generate`.
+
 ### Local deploy
 - Clone the repository to your local machine.
 - Install dependencies by running `yarn`.
@@ -41,19 +46,6 @@ To get a local copy up and running, follow these simple example steps.
 ### Bundle project
 
 - `yarn build`
-### Testing
-To test, run
-
-- `yarn test`
-
-### Linters
-
-- `yarn lint`
-
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
-
-## Show your support
-
-Give 5 stars ⭐️⭐️⭐️⭐️⭐️ if you like this project! 

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { NextApiRequest, NextApiResponse } from 'next';
+import prisma from '../../lib/prisma-client'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { k, crid, sprefix, ref } = req.query;
@@ -18,6 +19,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       },
       headers,
     });
+
+
+
+    // If keyword is not empty
+    if (k) {
+      const history = await prisma.history.create({
+        data: { keyword: String(k) },
+      });
+    }
 
     res.status(200).json(response.data);
   } catch (error) {
