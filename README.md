@@ -20,6 +20,7 @@
 To get a local copy up and running, follow these simple example steps.
 
 ### Prerequisites
+- PostgreSQL
 - Node.js
 - NPM
 - Yarn
@@ -29,7 +30,7 @@ To get a local copy up and running, follow these simple example steps.
 - Install dependencies by running `yarn`.
 
 ### Install Database
-- You should have postgres installed on your local machine.
+- You should have postgres installed on your local machine and set your db password in .env file(currently the password is `'root'` in .env, you can change it into your postgres password).
 - Sync Database with Prisma Model `yarn prisma:push`.
 - Generate the client from the Prisma schema file `yarn prisma:generate`.
 
