@@ -2,6 +2,7 @@ import { Quicksand } from '@next/font/google';
 import { createStitches } from '@stitches/react';
 
 const quicksand = Quicksand({
+  subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   style: 'normal',
 });
