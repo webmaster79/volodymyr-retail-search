@@ -5,7 +5,6 @@ import { styled } from '@/stitches.config';
 interface Props {
   title: string;
   linkText: string;
-  linkPath: string;
   description?: string;
 }
 
@@ -19,7 +18,7 @@ const StyledCardBody = styled('div', {
   order: 1,
 });
 
-const CardBody: FC<Props> = ({ title, description, linkText, linkPath }) => {
+const CardBody: FC<Props> = ({ title, description, linkText }) => {
   return (
     <StyledCardBody>
       {title}

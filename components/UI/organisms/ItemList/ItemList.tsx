@@ -21,10 +21,9 @@ const ItemList = ({ list }: { list: Product[] }) => {
         <Card
           key={item.uid}
           size={'large'}
-          imgSrc={item.url}
-          imgAlt={item.name}
+          imgSrc={item.imgUrl}
           title={item.name}
-          linkPath={item.link}
+          uid={item.uid}
         />
         )
       }

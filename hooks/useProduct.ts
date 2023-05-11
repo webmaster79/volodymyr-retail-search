@@ -1,5 +1,5 @@
 import mapListResults from '@/utils/mapProductResults';
-import { Product, ProductDetail } from '../lib/types';
+import { Product } from '../lib/types';
 import axios from 'axios';
 import cheerio from 'cheerio';
 
@@ -15,44 +15,15 @@ export const fetchProducts = async (keyword: string) => {
     },
   });
 
-
-  const html = data;
-  const $ = cheerio.load(html);
-
-  let products: Product[] = [];
-  $("div.s-result-item.s-widget-spacing-small").each((index, element) => {
-    const name = $(element).find("span.a-size-medium.a-color-base.a-text-normal").text();
-    const link = $(element).find("a.a-link-normal.s-no-outline")[0].attribs.href;
-    const uid = element.attribs['data-uuid'];
-    const image = $(element).find("img.s-image")[0].attribs.src;
-    products.push({ uid: uid, name: name, link: link, url: image })
-  })
-
-  const result = { results: mapListResults(products as Product[]).slice(0, 9) }
-  return result;
+  return data;
 };
 
-export const fetchProductDetail = async (url: string) => {
+export const fetchProductDetail = async (uid: string) => {
   const { data } = await axios.get('/api/amazon-detail', {
     params: {
-      url: url,
+      uid: uid,
     },
   });
-
-
-  const html = data;
-  const $ = cheerio.load(html);
-
-  const image = $('.imgTagWrapper>img')[0].attribs.src;
-  const name = $('#productTitle').text();
-  const price = $('.a-price-whole').first().text();
-
-  let product: ProductDetail = {
-    image: image,
-    name: name,
-    price: price
-  };
-  console.log(product)
-  const result = { results: product }
+  const result = { results: data }
   return result;
 };

@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import { ProductDetail } from '@/lib/types';
+import { Product } from '@/lib/types';
 import ProductCardDetails from '@/components/UI/organisms/ProductCardDetails';
 import DetailsTemplate from '@/components/templates/DetailsTemplate';
 
 interface Props {
-  product: ProductDetail | undefined;
+  product: Product | undefined;
 }
 
 const ProductDetailsPage: FC<Props> = ({ product }): JSX.Element => {
@@ -14,7 +14,7 @@ const ProductDetailsPage: FC<Props> = ({ product }): JSX.Element => {
       backPathText="&lt; Back"
       title="Product Detail Page"
     >
-      <ProductCardDetails product={product as ProductDetail} />
+      <ProductCardDetails product={product as Product} />
     </DetailsTemplate>
   );
 };

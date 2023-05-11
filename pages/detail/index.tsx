@@ -9,19 +9,19 @@ import { ProductDetail } from '@/lib/types';
 
 const ProductDetails: FC = (): JSX.Element => {
   const router = useRouter();
-  const productUrl =
-    typeof router.query?.url === 'string' ? router.query.url : '';
+  const productUid =
+    typeof router.query?.uid === 'string' ? router.query.uid : '';
   const [loading, setLoading] = useState<boolean>(true);
   useEffect(() => {
-    console.log(productUrl)
-    if (productUrl) {
-      getData(productUrl);
+    console.log(productUid)
+    if (productUid) {
+      getData(productUid);
     }
   }, [router]);
   const [product, setProduct] = useState<ProductDetail>();
-  const getData = async (url: string) => {
+  const getData = async (uid: string) => {
     setLoading(true);
-    let data = await fetchProductDetail(url);
+    let data = await fetchProductDetail(uid);
     setProduct(data.results);
     setLoading(false);
   }

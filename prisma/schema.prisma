@@ -10,9 +10,31 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model History {
+model SearchHistory {
   id           Int           @id @default(autoincrement())
-  keyword    String
+  keyword      String
+  searchedProducts SearchedProduct[]
+  dateCreated  DateTime      @default(now())
+  dateUpdated  DateTime      @default(now())
+}
+
+model SearchedProduct {
+  id           Int           @id @default(autoincrement())
+  keyword      SearchHistory      @relation(fields: [searchHistoryId], references: [id])
+  searchHistoryId    Int
+  product      Product      @relation(fields: [productId], references: [id])
+  productId    Int
+  dateCreated  DateTime      @default(now())
+  dateUpdated  DateTime      @default(now())
+}
+
+model Product {
+  id           Int           @id @default(autoincrement())
+  searchedProducts SearchedProduct[]
+  uid          String
+  name         String
+  imgUrl       String
+  price        String
   dateCreated  DateTime      @default(now())
   dateUpdated  DateTime      @default(now())
 }

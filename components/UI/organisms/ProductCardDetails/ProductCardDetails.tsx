@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { styled, theme } from '@/stitches.config';
-import { ProductDetail } from '@/lib/types';
+import { Product } from '@/lib/types';
 import ResponsiveImage from '../../atoms/ResponsiveImage';
 
 interface Props {
-  product: ProductDetail;
+  product: Product;
 }
 
 const DetailsCard = styled('div', {
@@ -40,7 +40,7 @@ const ProductCardDetails: FC<Props> = ({ product }): JSX.Element => {
   return (
     <DetailsCard>
       <ResponsiveImage
-        src={product.image}
+        src={product.imgUrl}
         alt={`${product.name} artwork`}
         imageBpWidths={[theme.sizes.cardImgWidthBp2.value]}
       />
@@ -51,7 +51,7 @@ const ProductCardDetails: FC<Props> = ({ product }): JSX.Element => {
         </li>
         <li>
           <strong>Price:</strong>{' '}
-          {product.price}$
+          {product.price}
         </li>
       </ul>
     </DetailsCard>

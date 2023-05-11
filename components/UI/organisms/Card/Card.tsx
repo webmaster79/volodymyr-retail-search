@@ -6,10 +6,9 @@ import { useRouter } from 'next/router';
 
 interface Props {
   imgSrc: string;
-  imgAlt: string;
   size: 'large';
   title: string;
-  linkPath: string;
+  uid: string;
 }
 
 const StyledCard = styled('div', {
@@ -28,27 +27,27 @@ const StyledCard = styled('div', {
   },
 });
 
-const Card: FC<Props> = ({ imgSrc, imgAlt, title, linkPath, ...props }): JSX.Element => {
+const Card: FC<Props> = ({ imgSrc, title, uid, ...props }): JSX.Element => {
   const router = useRouter();
-  const handleClick = (e:React.MouseEvent,link :string) => {
+  const handleClick = (e:React.MouseEvent,uid :string) => {
     e.preventDefault();
     router.push({
       pathname:'/detail',
       query:{
-        url:link
+        uid: uid
       }
     })
   }
   return (
     <StyledCard
-      onClick={(e: React.MouseEvent) => handleClick(e, linkPath)}
+      onClick={(e: React.MouseEvent) => handleClick(e, uid)}
     >
       <ResponsiveImage
         src={imgSrc}
-        alt={imgAlt}
+        alt={title}
         imageBpWidths={[theme.sizes.cardImgWidthBp2.value]}
       />
-      <CardBody title={title} linkText="Details →" linkPath={linkPath} />
+      <CardBody title={title} linkText="Details →" />
     </StyledCard>
   );
 };
