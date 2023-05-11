@@ -25,7 +25,10 @@ const KeywordItem = styled('div', {
   textAlign: 'center',
   padding: '10px',
   borderBottom: '1px solid #656d76',
-  cursor: 'pointer'
+  cursor: 'pointer',
+  '&:hover': {
+    backgroundColor: '#d3d3d3'
+  }
 });
 
 const Layout = styled('div', {
