@@ -10,6 +10,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     let searchHistories = await prisma.searchHistory.findMany({
       skip: skip,
       take: 10,
+      orderBy: {
+        dateCreated: 'desc'
+      }
     })
     res.status(200).json({data: searchHistories, total: total});
   } catch (error) {

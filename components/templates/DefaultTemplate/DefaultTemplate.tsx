@@ -63,14 +63,14 @@ const DefaultTemplate: FC<Props> = ({ children, title, searchText = '' }): JSX.E
   };
   const [histories, setHistories] = useState<SearchHistory[]>([]);
   const [page, setPage] = useState<number>(0);
-  const [pageTotal,setPageTotal] = useState<number>(0);
+  const [pageTotal, setPageTotal] = useState<number>(0);
   useEffect(() => {
     getData();
   }, [page]);
   const getData = async () => {
     let { results } = await fetchSearchHistories(page);
     setHistories(results.data as SearchHistory[]);
-    setPageTotal(Math.ceil(results.total/10));
+    setPageTotal(Math.ceil(results.total / 10));
   }
   return (
     <StyledDiv>
@@ -98,8 +98,8 @@ const DefaultTemplate: FC<Props> = ({ children, title, searchText = '' }): JSX.E
             ))}
             <PaginationDiv>
               <button onClick={() => setPage((page - 1) > 0 ? page - 1 : 0)}>prev</button>
-              <button>{page + 1}</button>
-              <button onClick={() => setPage((page + 1)>pageTotal?page + 1:page)}>next</button>
+              <button>{page + 1} of {pageTotal}</button>
+              <button onClick={() => setPage((page + 1) < pageTotal ? page + 1 : page)}>next</button>
             </PaginationDiv>
           </Left>
           <Container>
