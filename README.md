@@ -1,34 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+<h1><a href="#" target="_blank">NextJS Product Search App</a></h1>
+</div>
+
+<div align="center">
+  <img src="https://img.shields.io/badge/-NextJS-000000?logo=nextdotjs">
+  <img src="https://img.shields.io/badge/-ReactJS-61DAFB?logo=react&logoColor=black">
+  <img src="https://img.shields.io/badge/-TypeScript-3178C6?logo=TypeScript&logoColor=white">
+  <img src="https://img.shields.io/badge/-React%20Query-FF4154?logo=reactquery&logoColor=white">
+  
+  <img src="https://img.shields.io/badge/-TypeScript-3178C6?logo=TypeScript&logoColor=white">
+</div>
+
+<br>
+
+<div align="center" style="font-size:35px">🔴 ⚪️</div>
+
+<br>
+<br>
+
+
+<p align="center">This is a <strong>Next.js</strong> frontend web app that consumes the Product API at <a href="https://www.amazon.com/" target="_blank">amazon.com</a>.</p>
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy up and running, follow these simple example steps.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### Prerequisites
+- A browser to open the main file
+- Node.js
+- NPM
+- Yarn
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Local deploy
+- Clone the repository to your local machine.
+- Install dependencies by running `yarn`.
+- Run the app with `yarn dev`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Development
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Bundle project
 
-## Learn More
+- `yarn build`
+### Testing
+To test, run
 
-To learn more about Next.js, take a look at the following resources:
+- `yarn test`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Linters
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- `yarn lint`
 
-## Deploy on Vercel
+## 🤝 Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions, issues, and feature requests are welcome!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Show your support
+
+Give 5 stars ⭐️⭐️⭐️⭐️⭐️ if you like this project! 
