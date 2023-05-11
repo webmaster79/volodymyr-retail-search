@@ -15,6 +15,9 @@
 
 <p align="center">This is a <strong>Next.js</strong> frontend web app that consumes the Product API at <a href="https://www.amazon.com/" target="_blank">amazon.com</a>.</p>
 
+## Demo Video
+- https://www.loom.com/share/5aa07c2cc8124325be0b62972a35b6c3
+
 ## Getting Started
 
 To get a local copy up and running, follow these simple example steps.
