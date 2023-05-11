@@ -47,11 +47,11 @@ const ProductCardDetails: FC<Props> = ({ product }): JSX.Element => {
       <ul>
         <li>
           <strong>Name:</strong>{' '}
-          {product.name[0].toUpperCase() + product.name.slice(1)}
+          {product.name}
         </li>
         <li>
           <strong>Price:</strong>{' '}
-          {product.price}
+          ${product.price}
         </li>
       </ul>
     </DetailsCard>

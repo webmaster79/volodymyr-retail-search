@@ -58,8 +58,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const name = $(element).find("span.a-size-medium.a-color-base.a-text-normal").text();
         const link = $(element).find("a.a-link-normal.s-no-outline")[0].attribs.href;
         const uid = element.attribs['data-asin'];
+        const price = $(element).find("span.a-price-whole").text();
         const imgUrl = $(element).find("img.s-image")[0].attribs.src;
-        products.push({ uid: uid, name: name, imgUrl: imgUrl, price: '$100' })
+        products.push({ uid: uid, name: name, imgUrl: imgUrl, price: price ? price : '100' })
       })
       const data = { results: mapListResults(products as Product[]).slice(0, 9) }
 
