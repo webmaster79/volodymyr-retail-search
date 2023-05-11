@@ -5,3 +5,7 @@ export interface Product {
   imgUrl: string;
   price: string;
 }
+
+export interface SearchHistory {
+  keyword: string
+}

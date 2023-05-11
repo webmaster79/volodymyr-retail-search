@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
-import { fetchProducts } from '../hooks/useProduct';
+import { fetchProducts, fetchSearchHistories } from '../hooks/useProduct';
 import HomePage from '@/components/pages/HomePage';
 import MyBeatLoader from '@/components/UI/molecules/BeatLoader';
 import Container from '@/components/UI/atoms/Container';
@@ -10,6 +10,12 @@ const IndexPage: FC = (): JSX.Element => {
   const router = useRouter();
   const [loading,setLoading] = useState<boolean>(true);
   const [pData,setData] = useState<Product[]>([]);
+  const [histories, setHistories] = useState<any>();
+
+  useEffect(()=>{
+    console.log(histories,'dddddddddddddddddd');
+  },[histories]);
+
   useEffect(()=>{
     if(router.query.q !== undefined){
       getData(router.query.q as string);
@@ -19,6 +25,7 @@ const IndexPage: FC = (): JSX.Element => {
     }
   },[router.query.q]);
   const getData = async(keyword:string) => {
+    setHistories(await fetchSearchHistories());
     setLoading(true);
     let data = await fetchProducts(keyword);
     setData(data.results);

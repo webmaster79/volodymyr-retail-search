@@ -4,7 +4,7 @@ const Container = styled('div', {
   defaultVariants: {
     page: 'template',
   },
-  margin: '0 auto',
+  width: '100%',
   variants: {
     padding: {
       p1: {

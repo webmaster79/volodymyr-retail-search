@@ -27,3 +27,11 @@ export const fetchProductDetail = async (uid: string) => {
   const result = { results: data }
   return result;
 };
+
+export const fetchSearchHistories = async (page:number) => {
+  const { data } = await axios.get('/api/search-history', {
+    params: {page:page},
+  });
+  const result = { results: data }
+  return result;
+};

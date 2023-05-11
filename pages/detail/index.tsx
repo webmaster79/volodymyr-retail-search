@@ -5,7 +5,7 @@ import ProductDetailsPage from '@/components/pages/ProductDetails';
 import MyBeatLoader from '@/components/UI/molecules/BeatLoader';
 import Container from '@/components/UI/atoms/Container';
 
-import { ProductDetail } from '@/lib/types';
+import { Product } from '@/lib/types';
 
 const ProductDetails: FC = (): JSX.Element => {
   const router = useRouter();
@@ -18,7 +18,7 @@ const ProductDetails: FC = (): JSX.Element => {
       getData(productUid);
     }
   }, [router]);
-  const [product, setProduct] = useState<ProductDetail>();
+  const [product, setProduct] = useState<Product>();
   const getData = async (uid: string) => {
     setLoading(true);
     let data = await fetchProductDetail(uid);
