@@ -11,7 +11,7 @@ interface Props {
 const HomePage: FC<Props> = ({ productList }): JSX.Element => {
   const router = useRouter()
   return (
-    <DefaultTemplate title="NextJS Product Search App" searchText={router.query.q as string} >
+    <DefaultTemplate title="Retail Product Search App" searchText={router.query.q as string} >
       <ItemList
         list={productList}
       />

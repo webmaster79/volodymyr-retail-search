@@ -13,13 +13,14 @@ interface Props {
 }
 
 const StyledCard = styled('div', {
+  cursor: 'pointer',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'flex-start',
   padding: 0,
   width: '$w100',
   height: '$cardHeight',
-  '& div:nth-child(1)': {
+  '& div': {
     height: '$cardImgHeight',
   },
   '& div img': {

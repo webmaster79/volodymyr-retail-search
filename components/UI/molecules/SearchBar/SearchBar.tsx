@@ -78,10 +78,10 @@ const SearchBar: FC<Props> = ({
           Search
         </Button>
       </div>
-      <SearchResults
+      {/* <SearchResults
         searchResults={searchResults}
         showSearchResults={showSearchResults}
-      />
+      /> */}
     </StyledSearchBarWrapper>
   );
 };

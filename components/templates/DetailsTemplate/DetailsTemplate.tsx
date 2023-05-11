@@ -2,9 +2,9 @@ import React, { FC } from 'react';
 import Head from 'next/head';
 import Header from '@/components/UI/molecules/Header';
 import Container from '@/components/UI/atoms/Container';
-import Link from 'next/link';
 import Text from '@/components/UI/atoms/Text';
 import Title from '@/components/UI/atoms/Title';
+import Router from 'next/router'
 
 interface Props {
   children?: React.ReactNode;
@@ -29,17 +29,17 @@ const DetailsTemplate: FC<Props> = ({
         <Title as={'h5'}>{title}</Title>
       </Header>
       <Container padding={'p4'}>
-        <Link href={backPath}>
-          <Text
-            textStyle={'textParagraph'}
-            css={{
-              color: '$seafoamDark',
-              marginTop: '$4',
-            }}
-          >
-            <strong>{backPathText}</strong>
-          </Text>
-        </Link>
+        <Text
+          textStyle={'textParagraph'}
+          css={{
+            color: '$seafoamDark',
+            cursor: 'pointer',
+            marginTop: '$4',
+          }}
+          onClick={() => Router.back()}
+        >
+          <strong>{backPathText}</strong>
+        </Text>
         <main>{children}</main>
       </Container>
     </div>

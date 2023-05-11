@@ -1,5 +1,5 @@
 <div align="center">
-<h1><a href="#" target="_blank">NextJS Product Search App</a></h1>
+<h1><a href="#" target="_blank">Retail Product Search App</a></h1>
 </div>
 
 <div align="center">

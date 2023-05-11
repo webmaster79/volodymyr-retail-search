@@ -120,7 +120,7 @@ export const { styled, getCssText, css, globalCss, theme } = createStitches({
       cardWidthBp1: '250px',
       cardWidthBp2: '400px',
       cardWidthBp3: '320px',
-      cardHeight: '220px',
+      cardHeight: '334px',
       cardImgHeight: '167px',
       cardImgWidthBp1: 300,
       cardImgWidthBp2: 400,
