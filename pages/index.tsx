@@ -10,11 +10,6 @@ const IndexPage: FC = (): JSX.Element => {
   const router = useRouter();
   const [loading,setLoading] = useState<boolean>(true);
   const [pData,setData] = useState<Product[]>([]);
-  const [histories, setHistories] = useState<any>();
-
-  useEffect(()=>{
-    console.log(histories,'dddddddddddddddddd');
-  },[histories]);
 
   useEffect(()=>{
     if(router.query.q !== undefined){
@@ -25,7 +20,6 @@ const IndexPage: FC = (): JSX.Element => {
     }
   },[router.query.q]);
   const getData = async(keyword:string) => {
-    setHistories(await fetchSearchHistories());
     setLoading(true);
     let data = await fetchProducts(keyword);
     setData(data.results);
