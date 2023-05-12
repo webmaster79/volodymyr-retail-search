@@ -5,6 +5,7 @@ import Container from '@/components/UI/atoms/Container';
 import Text from '@/components/UI/atoms/Text';
 import Title from '@/components/UI/atoms/Title';
 import Router from 'next/router'
+import { styled } from '@/stitches.config';
 
 interface Props {
   children?: React.ReactNode;
@@ -12,6 +13,12 @@ interface Props {
   backPathText: string;
   title: string;
 }
+
+const Layout = styled('div', {
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center'
+});
 
 const DetailsTemplate: FC<Props> = ({
   children,
@@ -28,20 +35,23 @@ const DetailsTemplate: FC<Props> = ({
       <Header>
         <Title as={'h5'}>{title}</Title>
       </Header>
-      <Container padding={'p4'}>
-        <Text
-          textStyle={'textParagraph'}
-          css={{
-            color: '$seafoamDark',
-            cursor: 'pointer',
-            marginTop: '$4',
-          }}
-          onClick={() => Router.back()}
-        >
+      <Layout>
+        <Container padding={'p4'}>
+          <Text
+            textStyle={'textParagraph'}
+            css={{
+              color: '$seafoamDark',
+              cursor: 'pointer',
+              marginTop: '$4',
+            }}
+            onClick={() => Router.back()}
+          >
           <strong>{backPathText}</strong>
         </Text>
-        <main>{children}</main>
-      </Container>
+          <main>{children}</main>
+        </Container>
+      </Layout>
+      
     </div>
   );
 };
